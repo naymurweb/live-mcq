@@ -1,6 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import Blog from "./Components/Blog/Blog";
+import Error from "./Components/Error/Error";
 import Home from "./Components/Home/Home";
 import Quiz from "./Components/Quiz/Quiz";
 import Startstics from "./Components/Startstics/Startstics";
@@ -24,9 +26,10 @@ function App() {
         },
         {
           path: "/startstics",
-          loader:()=> fetch("https://openapi.programming-hero.com/api/quiz"),
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
           element: <Startstics></Startstics>,
         },
+        { path: "blog", element: <Blog></Blog> },
         {
           path: "course/:id",
           loader: ({ params }) =>
@@ -35,6 +38,7 @@ function App() {
         },
       ],
     },
+    { path: "*", element: <Error></Error> },
   ]);
 
   return (
