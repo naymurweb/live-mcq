@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import Quiz from "./Components/Quiz/Quiz";
+import Startstics from "./Components/Startstics/Startstics";
 import Main from "./Layout/Main";
 
 function App() {
@@ -11,13 +12,27 @@ function App() {
       path: "/",
       element: <Main></Main>,
       children: [
-        { path: "/",loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'), element: <Home></Home> },
-        { path: "/home",loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'), element: <Home></Home> },
         {
-          path:'course/:id',
-          loader:({params})=>fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
-          element:<Quiz></Quiz>
-        }
+          path: "/",
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+          element: <Home></Home>,
+        },
+        {
+          path: "/home",
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+          element: <Home></Home>,
+        },
+        {
+          path: "/startstics",
+          loader:()=> fetch("https://openapi.programming-hero.com/api/quiz"),
+          element: <Startstics></Startstics>,
+        },
+        {
+          path: "course/:id",
+          loader: ({ params }) =>
+            fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
+          element: <Quiz></Quiz>,
+        },
       ],
     },
   ]);
@@ -25,12 +40,8 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
-      <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
-    
   );
 }
 

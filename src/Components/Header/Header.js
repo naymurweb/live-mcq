@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import { Bars3Icon} from '@heroicons/react/24/solid'
-
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (
@@ -18,14 +17,11 @@ const Header = () => {
           </p>
 
           <p>
-            <NavLink to="/blog">statistics</NavLink>
+            <NavLink to="/startstics">statistics</NavLink>
           </p>
-         
         </nav>
 
         <Bars3Icon className="h-6 w- md:hidden"></Bars3Icon>
-
-
       </div>
     </div>
   );
