@@ -1,4 +1,9 @@
 nav a{
     margin-right: 20px;
+    font-weight: 600;
+    transition: all 0.10s;
 
+}
+nav a:hover{
+    color: #B9345A;
 }

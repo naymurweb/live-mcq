@@ -16,8 +16,8 @@ const Home = () => {
           </div>
 
           <div className="">
-            <h1 className="text-6xl my-4">
-              The Best Course you can get in eLearny
+            <h1 className="text-6xl my-4 text-teal-400">
+              The Best Course  you can get in eLearny
             </h1>
             <p>
               Sit amet, consectetur adipiscing elit, sed do eiusmod tempor

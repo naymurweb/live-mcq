@@ -12,9 +12,8 @@ const Options = ({ data }) => {
       toast.success(`RightAnswer`);
     } else {
       setIsfalse(true);
-      toast.success(`${correctAnswer}`);
+      toast.error(`wrongAnswer`);
     }
-
   };
   const questionText = question.slice(3, question.length - 4);
 
@@ -23,16 +22,16 @@ const Options = ({ data }) => {
       <p className="text-2xl text-start my-4">{questionText}</p>
 
       <div
-        className={`grid grid-cols-2 gap-4 text-lg justify-items-start text-start `}
+        className={`grid grid-cols-2 gap-2 text-lg justify-items-start`}
       >
         {options.map((quiz, index) => (
           <p key={index}>
             <button
               onClick={() => quizHandaler(quiz)}
-              className={`  ${isFalse ? "bg-red-500" : "bg-teal-200"}`}
+              className={`border border-blue-800 hover:bg-blue-300 p-3 rounded text-start ${isFalse ? "bg-red-500" : "bg-teal-200"}`}
             >
               {quiz}
-            </button>   
+            </button>
           </p>
         ))}
       </div>
