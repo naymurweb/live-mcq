@@ -2,8 +2,12 @@ nav a{
     margin-right: 20px;
     font-weight: 600;
     transition: all 0.10s;
+    padding: 10px 15px  ;
+    border-radius: 5px;
 
 }
-nav a:hover{
-    color: #B9345A;
+
+.active{
+    background-color:#D82E2F;
+
 }

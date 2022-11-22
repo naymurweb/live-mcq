@@ -10,7 +10,7 @@ const Header = () => {
         <h3 className="text-2xl font-semibold">Live MCQ</h3>
         <nav className="text-lg md:flex">
           <p>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} to="/home">Home</NavLink>
           </p>
           <p>
             <NavLink to="/blog">Blog</NavLink>
